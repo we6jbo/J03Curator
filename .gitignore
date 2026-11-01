@@ -49,3 +49,16 @@ CMakeLists.txt.before-*
 Thumbs.db
 __pycache__/
 *.pyc
+
+# Local publication readiness checks and generated reports
+/.oneal-flathub-readiness-ok
+
+# Backups of Flatpak icons, manifests, and metadata
+*.before-validator-repair-*
+*.before-flathub-metadata-*
+*.backup
+*.backup.*
+
+# Local temporary test output
+*.log
+*.pid
