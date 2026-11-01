@@ -1,0 +1,13 @@
+build/
+build-*/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+*.o
+*.user
+.qtcreator/
+.j03curator-backup-*/
+*.user.*
+*.swp
+*~
+compile_commands.json
