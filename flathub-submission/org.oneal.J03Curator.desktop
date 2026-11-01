@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=J03Curator
+Comment=Practice and learn fractions
+Exec=J03Curator
+Icon=org.oneal.J03Curator
+Terminal=false
+Categories=Education;
