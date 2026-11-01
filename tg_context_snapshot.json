@@ -1,0 +1,288 @@
+{
+  "schema": 1,
+  "generated_at": "2026-10-31T21:00:14-07:00",
+  "project_id": "j03curator",
+  "reference": "user-supplied J03Curator project snapshot",
+  "codes": [
+    "TG812186",
+    "TG323932",
+    "TG796320",
+    "TG654173",
+    "TG654147",
+    "TG564843",
+    "TG333041",
+    "TG610982",
+    "TG148675"
+  ],
+  "records": [
+    {
+      "code": "TG812186",
+      "registry_matches": [
+        {
+          "person_no": 33,
+          "display_name": "Mary",
+          "details": "B:Abt 1844 Ireland",
+          "name_permanent": 0,
+          "code": "TG812186",
+          "kind": "TG",
+          "permanent": 0,
+          "aliases": [],
+          "provisional_facts": [],
+          "relationships": [
+            {
+              "child": "Edward Mccabe",
+              "parent": "Mary",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TG323932",
+      "registry_matches": [
+        {
+          "person_no": 62,
+          "display_name": "Johannsen",
+          "details": "B:25 September 1833 D:26 March 1919",
+          "name_permanent": 0,
+          "code": "TG323932",
+          "kind": "TG",
+          "permanent": 0,
+          "aliases": [],
+          "provisional_facts": [],
+          "relationships": [
+            {
+              "child": "Mary Johannsen",
+              "parent": "Johannsen",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TG796320",
+      "registry_matches": [
+        {
+          "person_no": 50,
+          "display_name": "Fred Ernest Hillman",
+          "details": "B:21 Aug 1857 Minnesota, USA D:4 Dec 1950 Bald Eagle Center, Cass County, Minnesota, USA",
+          "name_permanent": 1,
+          "code": "TG796320",
+          "kind": "TG",
+          "permanent": 1,
+          "aliases": [],
+          "provisional_facts": [],
+          "relationships": [
+            {
+              "child": "Fred Ernest Hillman",
+              "parent": "Levi Colburn Hillman",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            },
+            {
+              "child": "Fred Ernest Hillman",
+              "parent": "Mary Marinda Shelly",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            },
+            {
+              "child": "Gail Agnes Hillman",
+              "parent": "Fred Ernest Hillman",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TG654173",
+      "registry_matches": [
+        {
+          "person_no": 63,
+          "display_name": "Elena M Johannsen",
+          "details": "B:24 June 1836 D:3 June 1920",
+          "name_permanent": 1,
+          "code": "TG654173",
+          "kind": "TG",
+          "permanent": 1,
+          "aliases": [],
+          "provisional_facts": [],
+          "relationships": [
+            {
+              "child": "Elena M Johannsen",
+              "parent": "Lorenz Hinrichsen",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            },
+            {
+              "child": "Elena M Johannsen",
+              "parent": "Sophia Margaretha Hinrichsen",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            },
+            {
+              "child": "Mary Johannsen",
+              "parent": "Elena M Johannsen",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TG654147",
+      "registry_matches": [
+        {
+          "person_no": 32,
+          "display_name": "James McCabe",
+          "details": "B:About 1840 Ireland",
+          "name_permanent": 0,
+          "code": "TG654147",
+          "kind": "TG",
+          "permanent": 0,
+          "aliases": [],
+          "provisional_facts": [],
+          "relationships": [
+            {
+              "child": "Edward Mccabe",
+              "parent": "James McCabe",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TG564843",
+      "registry_matches": [
+        {
+          "person_no": 96,
+          "display_name": "William Maynard",
+          "details": "B:18 May 1830 Pike County, Kentucky, United States of America D:25 March 1908 Pierce County, Washington, United States of America",
+          "name_permanent": 0,
+          "code": "TG564843",
+          "kind": "TG",
+          "permanent": 0,
+          "aliases": [],
+          "provisional_facts": [],
+          "relationships": [
+            {
+              "child": "George Maynard",
+              "parent": "William Maynard",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TG333041",
+      "registry_matches": [
+        {
+          "person_no": 79,
+          "display_name": "Mary Jane Sumner",
+          "details": "B:1839 Pennsylvania D:before 1880 Pennsylvania",
+          "name_permanent": 0,
+          "code": "TG333041",
+          "kind": "TG",
+          "permanent": 0,
+          "aliases": [],
+          "provisional_facts": [],
+          "relationships": [
+            {
+              "child": "Mary Thorpe",
+              "parent": "Mary Jane Sumner",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TG610982",
+      "registry_matches": [
+        {
+          "person_no": 53,
+          "display_name": "Amelia Carolina Luedtke",
+          "details": "Born: February 1850 – Pomerania, Prussia)(Died: 24 April 1925 – Henderson, Sibley County, Minnesota, United States",
+          "name_permanent": 1,
+          "code": "TG610982",
+          "kind": "TG",
+          "permanent": 1,
+          "aliases": [],
+          "provisional_facts": [],
+          "relationships": [
+            {
+              "child": "Robert R Hedtke",
+              "parent": "Amelia Carolina Luedtke",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "code": "TG148675",
+      "registry_matches": [
+        {
+          "person_no": 51,
+          "display_name": "Agnes Maria Platt",
+          "details": "Born: 27 April 1857 – Palmyra, Jefferson County, Wisconsin, United States)(Died: 23 February 1946 – Ramsey County, Minnesota, United States",
+          "name_permanent": 1,
+          "code": "TG148675",
+          "kind": "TG",
+          "permanent": 1,
+          "aliases": [],
+          "provisional_facts": [],
+          "relationships": [
+            {
+              "child": "Agnes Maria Platt",
+              "parent": "David C Platt",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            },
+            {
+              "child": "Agnes Maria Platt",
+              "parent": "Miranda McLane",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            },
+            {
+              "child": "Gail Agnes Hillman",
+              "parent": "Agnes Maria Platt",
+              "relation": "parent",
+              "confidence": 1.0,
+              "permanent": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "portable": true,
+  "note": "This snapshot lets the project retain its TG/AKA provenance without requiring the local T14 registry."
+}
