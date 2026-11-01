@@ -20,3 +20,16 @@ __pycache__/
 *.swo
 *.orig
 *.rej
+
+# Additional generated CMake / Flatpak build directories
+build-dir/
+.flatpak-builder/
+
+# Local backups of this ignore file
+.gitignore.bak.*
+
+# Editor and operating system temporary files
+*.tmp
+*.bak
+*.swn
+*.kate-swp

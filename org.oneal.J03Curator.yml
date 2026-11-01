@@ -1,0 +1,16 @@
+app-id: org.oneal.J03Curator
+runtime: org.kde.Platform
+runtime-version: '6.11'
+sdk: org.kde.Sdk
+command: J03Curator
+finish-args:
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --share=ipc
+  - --device=dri
+modules:
+  - name: J03Curator
+    buildsystem: cmake-ninja
+    sources:
+      - type: dir
+        path: .
