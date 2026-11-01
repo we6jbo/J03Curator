@@ -1,35 +1,51 @@
-build/
-build-*/
-cmake-build-*/
+# J03Curator: generated build trees
+/build/
+/build-*/
+/cmake-build-*/
+/build-dir/
+/.flatpak-builder/
 CMakeFiles/
 CMakeCache.txt
-*.o
-*.user
-.qtcreator/
-.j03curator-backup-*/
-*.user.*
-*.swp
-*~
+CMakeUserPresets.json
 compile_commands.json
-.vscode/
-.idea/
+cmake_install.cmake
+Makefile
+*.o
+*.obj
+*.a
+*.so
+*.so.*
+*.d
+*.moc
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+*_autogen/
+
+# Qt Creator and other editor state
+/.qtcreator/
+*.user
+*.user.*
+/.vscode/
+/.idea/
+*.swp
+*.swo
+*.swn
+*.kate-swp
+*~
+
+# Local backup copies (never delete automatically)
+/.j03curator-backup-*/
+.gitignore.bak.*
+.gitignore.backup*
+CMakeLists.txt.before-*
+*.orig
+*.rej
+*.bak
+*.tmp
+
+# OS and Python cache
 .DS_Store
 Thumbs.db
 __pycache__/
 *.pyc
-*.swo
-*.orig
-*.rej
-
-# Additional generated CMake / Flatpak build directories
-build-dir/
-.flatpak-builder/
-
-# Local backups of this ignore file
-.gitignore.bak.*
-
-# Editor and operating system temporary files
-*.tmp
-*.bak
-*.swn
-*.kate-swp

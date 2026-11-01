@@ -6,3 +6,11 @@ find_package(Qt6 REQUIRED COMPONENTS Core Sql)
 add_executable(J03Curator main.cpp)
 target_link_libraries(J03Curator PRIVATE Qt6::Core Qt6::Sql)
 install(TARGETS J03Curator RUNTIME DESTINATION bin)
+
+# Flathub desktop integration
+install(FILES org.oneal.J03Curator.desktop
+        DESTINATION share/applications)
+install(FILES org.oneal.J03Curator.metainfo.xml
+        DESTINATION share/metainfo)
+install(FILES org.oneal.J03Curator.svg
+        DESTINATION share/icons/hicolor/scalable/apps)
