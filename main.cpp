@@ -22,8 +22,13 @@
 
 static const char *PROVENANCE_CODES="TG812186,TG323932,TG796320,TG654173,TG654147,TG564843,TG333041,TG610982,TG148675";
 static QTextStream out(stdout), err(stderr);
-static QString repo() { return QDir::homePath()+"/.j03-software"; }
-static QString dbfile() { return QDir::homePath()+"/.so672jNC/j03curator.db"; }
+static QString realHome() {
+    const QString snapHome = qEnvironmentVariable("SNAP_REAL_HOME");
+    return snapHome.isEmpty() ? QDir::homePath() : snapHome;
+}
+
+static QString repo() { return realHome()+"/.j03-software"; }
+static QString dbfile() { return realHome()+"/.so672jNC/j03curator.db"; }
 static QString run(const QString &exe,const QStringList &args,int *rc=nullptr) {
     QProcess p; p.setWorkingDirectory(repo()); p.start(exe,args);
     if(!p.waitForStarted(5000)){if(rc)*rc=127;return "Unable to start "+exe;}
@@ -63,7 +68,7 @@ void checkT14Environment(QTextStream &out)
     }
 }
 // Completion timing is persisted outside /tmp so a T14 crash cannot reset the 16-minute clock.
-static QString durableTiming() { return QDir::homePath()+"/.local/state/j03curator/completion-time.json"; }
+static QString durableTiming() { return realHome()+"/.local/state/j03curator/completion-time.json"; }
 static QString transientTiming() { return "/tmp/emal/time.json"; }
 static bool writeJson(const QString &path,const QJsonObject &obj) {
     if(!QDir().mkpath(QFileInfo(path).absolutePath()))return false;
@@ -84,10 +89,10 @@ static QString completionPrompt(const QString &project,const QString &why) {
     "For each project, export ONLY reviewed, legally redistributable and useful source, assets and AI instructions; "
     "include one specifically approved screenshot (or explicitly report if none can be captured). "
     "Never assume approval to publish or release to a store. Check rights, privacy, code quality, links and actual status. "
-    "J03Curator manual: /home/we6jbo/.jchjtzir/manual.md ; "
-    "J03Curator source: /home/we6jbo/Projects/J03Curator/ . "
+    "J03Curator manual: "+realHome()+"/.jchjtzir/manual.md ; "
+    "J03Curator source: "+realHome()+"/Projects/J03Curator/ . "
     "Recover completion timer from ~/.local/state/j03curator/completion-time.json if /tmp/emal/time.json was lost. "
-    "Session URL is in /home/we6jbo/.ckbrgj/chatgpt-session.txt .";
+    "Session URL is in "+realHome()+"/.ckbrgj/chatgpt-session.txt .";
 }
 static void offerClipboard(const QString &message) {
     QString clip=QStandardPaths::findExecutable("wl-copy");QStringList args;
@@ -100,7 +105,7 @@ static void offerClipboard(const QString &message) {
     else out<<"AI message copied to clipboard. Paste into your session.\n";
 }
 static void openSession() {
-    QFile f(QDir::homePath()+"/.ckbrgj/chatgpt-session.txt");
+    QFile f(realHome()+"/.ckbrgj/chatgpt-session.txt");
     if(!f.open(QIODevice::ReadOnly)){out<<"Session file unavailable; no browser launched.\n";return;}
     QString url=QString::fromUtf8(f.readAll()).trimmed();
     QUrl u(url);
@@ -164,7 +169,7 @@ int main(int argc,char **argv){
  // Print before creating the marker, exactly as requested. No marker means retry next time.
  const QString startupMarker = "/tmp/wzfh/started.touch";
  if (!QFileInfo::exists(startupMarker)) {
-     out << "Chatgpt or Mistral vibe, please read /home/we6jbo/.jchjtzir/manual.md because it has all the commands" << Qt::endl;
+     out << "Chatgpt or Mistral vibe, please read " << realHome() << "/.jchjtzir/manual.md because it has all the commands" << Qt::endl;
      if (QDir().mkpath("/tmp/wzfh")) {
          QFile marker(startupMarker);
          if (!marker.open(QIODevice::WriteOnly))
@@ -179,7 +184,7 @@ int main(int argc,char **argv){
  help();checkT14Environment(out);return 0;}
  const QString cmd=a[1];
  if(cmd=="completion")return completionCommand(a);
- if(cmd=="manual") {out<<"Manual: "<<QDir::homePath()<<"/.jchjtzir/manual.md\n";return 0;}
+ if(cmd=="manual") {out<<"Manual: "<<realHome()<<"/.jchjtzir/manual.md\n";return 0;}
  if(cmd=="genealogy") {out<<"Provenance codes: "<<PROVENANCE_CODES<<"\nFred Ernest Hillman: TG796320\nElena M Johannsen: TG654173\n";return 0;}
  if(cmd=="status") {out<<"Repository: "<<repo()<<" ("<<(QDir(repo()).exists()?"exists":"missing")<<")\nDatabase: "<<dbfile()<<" ("<<(QFileInfo::exists(dbfile())?"exists":"not initialized")<<")\n";
  out<<"Git tree: "<<run("git",{"rev-parse","--show-toplevel"})<<"\nGit remote: "<<run("git",{"remote","get-url","origin"})<<"\nMarker local: "<<(QFileInfo::exists(repo()+"/28253.txt")?"yes":"no")<<"\n";
@@ -196,7 +201,7 @@ int main(int argc,char **argv){
   }
   const QString megabytes=QString::number(static_cast<double>(totalBytes)/1000000.0,'f',2);
   const int days=qMax(0, QDate(2026,10,30).daysTo(QDate::currentDate()));
-  const QString script=QDir::homePath()+"/.so672jNC/checkspace1.sh";
+  const QString script=realHome()+"/.so672jNC/checkspace1.sh";
   out<<"Repository size (MB): "<<megabytes<<"\nDays since 2026-10-30: "<<days<<"\n";
   out.flush();
   if(!QFileInfo::exists(script)) {err<<"Warning: checkspace1.sh not found: "<<script<<Qt::endl;return 0;}
@@ -233,7 +238,7 @@ int main(int argc,char **argv){
  if(cmd=="screenshot" && (a.size()==3 || (a.size()==4 && a[3]=="--select-latest"))){
    QSqlQuery exists(db);exists.prepare("SELECT name FROM projects WHERE name=?");exists.addBindValue(a[2]);
    if(!exists.exec()||!exists.next()){err<<"Unknown project. Register it first with: J03Curator add <project> <source-file>\n";return 2;}
-   QString root=QDir::homePath()+"/.38bTqEvQc";
+   QString root=realHome()+"/.38bTqEvQc";
    QFileInfo newest;QString name=a[2];
    QDirIterator it(root,QStringList()<<"*.png",QDir::Files,QDirIterator::Subdirectories);
    while(it.hasNext()){
@@ -361,7 +366,7 @@ int main(int argc,char **argv){
      if(!QDir(target).exists())next="J03Curator export "+a[2];
      else next="git -C "+repo()+" status --short";
    }
-   out<<"Chatgpt or Mistral Vibe, the following has been completed: \""<<completed<<"\" and the next recommendation is to do the following command: \""<<next<<"\". Also, the manual for this program can be found at "<<QDir::homePath()<<"/.jchjtzir/manual.md and the sourcecode for this program can be found at "<<QDir::homePath()<<"/Projects/J03Curator/. Please guide Jeremiah O'Neal on what he should do. Jeremiah will be clueless as to what to do next.\n";
+   out<<"Chatgpt or Mistral Vibe, the following has been completed: \""<<completed<<"\" and the next recommendation is to do the following command: \""<<next<<"\". Also, the manual for this program can be found at "<<realHome()<<"/.jchjtzir/manual.md and the sourcecode for this program can be found at "<<realHome()<<"/Projects/J03Curator/. Please guide Jeremiah O'Neal on what he should do. Jeremiah will be clueless as to what to do next.\n";
    out<<"This is guidance only. Confirm before any export or publication; no commands have been executed by handoff.\n";
    return 0;
  }

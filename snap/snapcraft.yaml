@@ -1,0 +1,37 @@
+name: j03curator
+title: J03Curator
+license: Apache-2.0
+source-code: https://github.com/we6jbo/J03Curator
+issues: https://github.com/we6jbo/J03Curator/issues
+version: '1.0'
+summary: AI-assisted software project organization and publication preparation
+description: |
+  J03Curator is a command-line project management application
+  that helps developers review, organize and prepare software
+  development materials for publication.
+base: core24
+grade: stable
+confinement: classic
+
+apps:
+  j03curator:
+    command: usr/bin/J03Curator
+    plugs:
+      - home
+
+parts:
+  j03curator:
+    plugin: cmake
+    build-attributes:
+      - enable-patchelf
+    source: .
+    build-packages:
+      - g++
+      - cmake
+      - qt6-base-dev
+    stage-packages:
+      - libqt6sql6-sqlite
+      - git
+    cmake-parameters:
+      - -DCMAKE_INSTALL_PREFIX=/usr
+      - -DCMAKE_BUILD_TYPE=Release

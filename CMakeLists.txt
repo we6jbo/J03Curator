@@ -14,3 +14,5 @@ install(FILES org.oneal.J03Curator.metainfo.xml
         DESTINATION share/metainfo)
 install(FILES org.oneal.J03Curator.svg
         DESTINATION share/icons/hicolor/scalable/apps)
+
+install(FILES LICENSE DESTINATION share/doc/j03curator)
